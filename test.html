@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <h3>{{message}}</h3>
+    <div v-on:click="handleClick" style="cursor:pointer;">btn</div>
+    <span v-for="item in list">{{item}}</span>
+    <p>{{datas.name}}</p>
+  </div>
+  <script src="./src/index.js" type="module"></script>
+  <script type="module">
+    import Vue from './src/index.js'
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message: 'Hello Vue!',
+        list: [1, 2, 3],
+        datas: {
+          name: '张三',
+          age: 18,
+        },
+      },
+      methods: {
+        handleClick() {
+          this.message = 'Clicked!'
+        }
+      }
+    });
+
+  </script>
+
+</body>
+
+</html>
