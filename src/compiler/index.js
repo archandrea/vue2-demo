@@ -2,7 +2,6 @@ import { generate } from './generator.js'
 import { parse } from './parser.js'
 
 export function compile(html) {
-  // console.log(generate(parse(html)).toString())
   // function anonymous() {
   //   with (this) {
   //     return __h__(
