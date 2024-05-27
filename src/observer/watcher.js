@@ -5,7 +5,7 @@ export default class Watcher {
     this.cb = cb
     vm.watchers.push(this)
 
-    this.getter = expOrFn
+    this.getter = expOrFn // render
     this.setter = undefined
     this.value = this.get()
   }
