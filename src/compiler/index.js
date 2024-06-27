@@ -37,5 +37,8 @@ export function compile(html) {
   //       ))
   //   }
   // }
+
+  // parse transform html string to ast tree
+  // generate transform ast to render function
   return generate(parse(html))
 }

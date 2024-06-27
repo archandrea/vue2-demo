@@ -1,4 +1,4 @@
-// TODO: we take the source code from vue2.0.0 for now. will be rewrited this part later.
+// TODO: we take the source code from vue2.0.0 for now. will be rewrited this part later, probably.
 
 
 /**
