@@ -9,11 +9,20 @@ export default class Vue {
     this.$options = options
     this._data = options.data
     const el = this.elm = document.querySelector(options.el)
+
+    // get ast tree from html string
+    // and then compile it into a render function
     const render = compile(el.outerHTML)
     el.innerHTML = ''
 
+    // proxy data to this._data and mount methods to this
     for (const key in options.data) {
       this._proxy(key)
+    }
+    if (options.methods) {
+      for (const key in options.methods) {
+        this[key] = options.methods[key]
+      }
     }
 
     this.watchers = []
