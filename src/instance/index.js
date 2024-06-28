@@ -1,4 +1,5 @@
 import { compile } from '../compiler/index.js'
+import { observe } from '../observer/index.js'
 import Watcher from '../observer/watcher.js'
 import VNode from '../vdom/vnode.js'
 import { patch } from '../vdom/index.js'
@@ -24,6 +25,8 @@ export default class Vue {
         this[key] = options.methods[key]
       }
     }
+
+    this._ob = observe(options.data)
 
     this.watchers = []
     this.watcher = new Watcher(this, render)
