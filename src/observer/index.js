@@ -46,11 +46,11 @@ export function observe(value) {
 
 export function defineReactive(obj, key, val) {
 
-  let prop = getOwnPropertyDescriptor(obj, key)
+  let prop = Object.getOwnPropertyDescriptor(obj, key)
   if (prop && prop.configurable === false) return
 
-  const getter = property && property.get
-  const setter = property && property.set
+  const getter = prop && prop.get
+  const setter = prop && prop.set
 
   let childOb = observe(val) // recursively observe all properties of the value as well (for deep observation)
   Object.defineProperty(obj, key, {
